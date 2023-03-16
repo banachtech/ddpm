@@ -24,24 +24,22 @@ $$L(\theta) = E\left(\Vert \epsilon - \epsilon_\theta(\sqrt{\bar{\alpha}_t} x_0 
 
 Repeat until convergence:
 
-Sample $x_0$ from dataset
+  Sample $x_0$ from dataset
 
-Sample $t \sym \mathcal{U}\[1,\ldots,T\]$
+  Sample $t \sim \mathcal{U}\[1,\ldots,T\]$
 
-Sample $\epsilon \sym \mathcal{N}(0,I)$
+  Sample $\epsilon \sim \mathcal{N}(0,I)$
 
-Update $\theta \longleftarrow \theta - \eta \nabla_\theta L(\theta)$
+  Update $\theta \longleftarrow \theta - \eta \nabla_\theta L(\theta)$
 
 ### Sampling Algorithm
 
-Sample $x_T \sym \mathcal{N}(0,I)$
+Sample $x_T \sim \mathcal{N}(0,I)$
 
-for $T \ldots 1$
-  if $t > 1$
-    sample $z \sym \mathcal{N}(0,I)$
-  else
-    $z = 0$
-  endif
-  $$x_{t-1} = \frac{1}{\sqrt{\alpha_t}}\left(x_t - \frac{1-\alpha_t}{\sqrt{1-\bar{\alpha}_t}}\epsilon_\theta(x_t)\right) + \beta_t z$$
-end for
-return $x_0$
+Repeat until $t=1$
+
+  If $t > 1$, sample $z \sym \mathcal{N}(0,I)$. Otherwise, $z=0$.
+ 
+  $$ x_{t-1} = \frac{1}{\sqrt{\alpha_t}} \left(x_t - \frac{1-\alpha_t}{\sqrt{1-\bar{\alpha}_t}} \epsilon_\theta(x_t) \right) + \beta_t z $$
+
+Return $x_0$
