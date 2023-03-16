@@ -24,13 +24,13 @@ $$L(\theta) = E\left(\Vert \epsilon - \epsilon_\theta(\sqrt{\bar{\alpha}_t} x_0 
 
 Repeat until convergence:
 
-  Sample $x_0$ from dataset
+  - Sample $x_0$ from dataset
 
-  Sample $t \sim \mathcal{U}\[1,\ldots,T\]$
+  - Sample $t \sim \mathcal{U}\[1,\ldots,T\]$
 
-  Sample $\epsilon \sim \mathcal{N}(0,I)$
+  - Sample $\epsilon \sim \mathcal{N}(0,I)$
 
-  Update $\theta \longleftarrow \theta - \eta \nabla_\theta L(\theta)$
+  - Update $\theta \longleftarrow \theta - \eta \nabla_\theta L(\theta)$
 
 ### Sampling Algorithm
 
