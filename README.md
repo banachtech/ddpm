@@ -40,6 +40,6 @@ Repeat until $t=1$
 
   - If $t > 1$, sample $z \sim \mathcal{N}(0,I)$. Otherwise, $z=0$.
  
-  - $ x_{t-1} = \frac{1}{\sqrt{\alpha_t}} \left(x_t - \frac{1-\alpha_t}{\sqrt{1-\bar{\alpha}_t}} \epsilon_\theta(x_t) \right) + \beta_t z $
+  - Compute $x_{t-1} = \frac{1}{\sqrt{\alpha_t}} \left(x_t - \frac{1-\alpha_t}{\sqrt{1-\bar{\alpha}_t}} \epsilon_\theta(x_t) \right) + \beta_t z$
 
 Return $x_0$
