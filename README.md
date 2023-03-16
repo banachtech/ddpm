@@ -5,15 +5,13 @@ Reference: [Ho, J., Jain, A., & Abbeel, P. (2020). Denoising diffusion probabili
 
 ## Methodology
 
-### Inputs
+### Definitions
 
 training data: set of $x_0 \in \mathbb{R}^{m\times n}$
 
 variance schedule: $\beta_t$, $t = 1, \ldots, T$
 
 model: $\epsilon_\theta$ - a neural network that has input and out dimensions equal to that of $x_0$
-
-### Definitions
 
 $$\alpha_t = 1 - \beta_t$$
 
